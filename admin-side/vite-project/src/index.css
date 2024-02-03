@@ -1,0 +1,95 @@
+body {
+    font-family: "Arial", sans-serif;
+    background: rgb(36, 35, 35);
+    background: linear-gradient(90deg,
+            rgba(36, 35, 35, 1) 0%,
+            rgba(52, 52, 52, 1) 20%,
+            rgba(74, 74, 74, 1) 40%,
+            rgba(98, 98, 98, 1) 60%,
+            rgba(107, 106, 106, 1) 80%);
+}
+
+.sidebar {
+    height: 100vh;
+    /* background: rgb(36, 35, 35); */
+    border-radius: 0px;
+    background: #212121;
+    box-shadow: 6px 6px 9px #0d0d0d, -6px -6px 9px #353535;
+    color: #ffffff;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.sidebar a:hover {
+    color: rgb(255, 216, 138);
+}
+
+.content {
+    margin-top: 20px;
+    color: white;
+}
+
+.icon-width {
+    width: 30px;
+    height: 30px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.card-custom {
+    border-radius: 20px;
+    background: #212121;
+    box-shadow: 5px 5px 10px #101010,
+        -5px -5px 10px #323232;
+    width: 30rem;
+}
+
+.button-custom-2 {
+    background-color: rgb(255, 216, 138);
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-custom-2:hover {
+    background-color: white;
+    color: #000000;
+}
+
+.custom-popup-class {
+    background-color: #2a2a2a; /* Warna latar belakang popup */
+    /* border: 2px solid #ffffff; Warna border popup */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Efek bayangan */
+  }
+
+  .custom-header-class {
+    background-color: #1f1f1f; /* Warna latar belakang header */
+    border-bottom: 2px solid #ffffff; /* Warna border header */
+    color: #ffffff; /* Warna teks header */
+  }
+
+  .custom-icon-class {
+    color: #00ff00; /* Warna ikon */
+  }
+
+  .custom-title-class {
+    color: #ffffff; /* Warna teks judul */
+  }
+
+  .custom-confirm-button-class {
+    background-color: rgb(255, 216, 138) !important; /* Warna latar belakang tombol konfirmasi */
+    color: #ffffff !important; /* Warna teks tombol konfirmasi */
+  }
+
+  .copy-paragraph {
+    cursor: pointer;
+    user-select: none;
+  }
