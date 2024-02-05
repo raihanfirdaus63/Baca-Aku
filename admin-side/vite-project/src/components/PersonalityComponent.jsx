@@ -28,13 +28,32 @@ function PersonalityComponent() {
   const handleFindPersonality = async (e) => {
     try {
       e.preventDefault();
-      console.log(dataForm, "form" )
       const result = await dispatch(fetchDataPersonality(dataForm));
       Swal.fire({
-        icon: "success",
-        title: "Success Fetch Data",
+        icon: 'success',
+        title: 'Success Fetch Data',
         confirmButtonColor: '#ff4500',
+        background: '#2a2a2af',
+        customClass: {
+          popup: 'custom-popup-class',
+          header: 'custom-header-class',
+          title: 'custom-title-class',
+          closeButton: 'custom-close-button-class',
+          icon: 'custom-icon-class',
+          content: 'custom-content-class',
+          actions: 'custom-actions-class',
+          confirmButton: 'custom-confirm-button-class',
+          cancelButton: 'custom-cancel-button-class',
+          footer: 'custom-footer-class'
+        },
+        showCloseButton: false,
+        timerProgressBar: true,
+        timer: 3000,
+        onOpen: (el) => {
+          el.style.borderRadius = '10px';
+        }
       });
+      
       navigate('/personality');
     } catch (error) {
       let errorMessage = 'Something went wrong!';

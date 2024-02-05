@@ -49,8 +49,17 @@ function LoginPage() {
             confirmButton: 'custom-confirm-button-class',
           },
           confirmButtonColor: '#ff4500', 
-        })
-        navigate('/');
+          timer: 3000, // Waktu penutupan dalam milidetik (contoh: 3000 ms atau 3 detik)
+          showConfirmButton: false, // Menghilangkan tombol konfirmasi jika diinginkan
+          // Menyesuaikan warna progress bar
+          timerProgressBar: true,
+          progressBarColor: '#ffffff', // Ganti dengan warna putih atau warna yang diinginkan
+        });
+  
+        // Navigasi ke halaman utama setelah beberapa saat
+        setTimeout(() => {
+          navigate('/');
+        }, 3000); // Sesuaikan waktu dengan timer SweetAlert
       } else {
         throw new Error('Invalid response from server');
       }

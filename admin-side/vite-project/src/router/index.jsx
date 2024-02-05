@@ -3,6 +3,8 @@ import HomePage from "../views/HomePage";
 import LoginPage from "../views/LoginPage";
 import RegisterPage from "../views/RegisterPage";
 import Personality from "../views/PersonalityPage";
+import PersonalitiesPage from "../views/PersonalitiesPage";
+import NotFoundPage from "../views/NotFoundPage";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
       path: "/personality",
       element: <Personality />
     },
+    {
+      path: "/*",
+      element:<NotFoundPage/>
+    }
   ])
 
 export default router

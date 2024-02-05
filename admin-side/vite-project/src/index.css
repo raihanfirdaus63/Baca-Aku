@@ -65,7 +65,7 @@ body {
 }
 
 .custom-popup-class {
-    background-color: #2a2a2a; /* Warna latar belakang popup */
+    background-color: #2a2a2af7; /* Warna latar belakang popup */
     /* border: 2px solid #ffffff; Warna border popup */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Efek bayangan */
   }
@@ -86,10 +86,15 @@ body {
 
   .custom-confirm-button-class {
     background-color: rgb(255, 216, 138) !important; /* Warna latar belakang tombol konfirmasi */
-    color: #ffffff !important; /* Warna teks tombol konfirmasi */
+    color: #070707 !important; /* Warna teks tombol konfirmasi */
   }
 
   .copy-paragraph {
     cursor: pointer;
     user-select: none;
   }
+  .custom-text-class{
+    color:#ffffff !important ;
+    }
+
+  
