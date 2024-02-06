@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://server.bacaaku.com";
 
 
 export const registerAdmin = (registerForm) => {

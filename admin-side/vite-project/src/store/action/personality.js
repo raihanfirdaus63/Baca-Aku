@@ -1,11 +1,11 @@
 // store/action/personality.js
 import { FIND_PERSONALITY } from "./actionType";
 
-const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://server.bacaaku.com";
 
 export const fetchDataPersonality = (dataForm) => {
   return async (dispatch) => {
-    console.log(dataForm, "action")
     try {
       const response = await fetch(`${BASE_URL}/findPersonality`, {
         method: 'POST',
@@ -15,7 +15,6 @@ export const fetchDataPersonality = (dataForm) => {
           'access_token': localStorage.getItem('access_token')
         },
       });
-
       if (response.ok) {
         const personalities = await response.json();
         dispatch(fetchPersonality(personalities));
