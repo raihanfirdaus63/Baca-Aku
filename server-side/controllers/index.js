@@ -18,6 +18,7 @@ class Controller {
     try {
       const access_token = await sequelize.transaction(async (t) => {
         const { email, password } = req.body;
+        console.log(req.body,"server")
         if (!email || !password) throw { name: "Invalid Credential" };
         const user = await User.findOne({ where: { email } });
         if (!user) throw { name: "Invalid Credential" };
@@ -31,19 +32,17 @@ class Controller {
       next(err);
     }
   }
-  static async loginUser(req,res,next){
+  static async loginUser(req, res, next) {
     try {
-      const access_token = await sequelize.transaction(async (t) => {
-        const { email, password } = req.body;
-        if (!email || !password) throw { name: "Invalid Credential" };
-        const user = await User.findOne({ where: { email } });
-        if (!user) throw { name: "Invalid Credential" };
-        const isPassword = comparePassword(password, user.password);
-        if (!isPassword) throw { name: "Invalid Credential" };
-        const access_token = createToken({ id: user.id });
-        return access_token;
-      });
-      res.json({ access_token });
+      const { email, password } = req.body;
+      if (!email || !password) throw { name: "Invalid Credential" };
+      const user = await User.findOne({ where: { email } });
+      if (!user) throw { name: "Invalid Credential" };
+      const isPassword = comparePassword(password, user.password);
+      if (user.role !== "user") throw { name: "No Access" };
+      if (!isPassword) throw { name: "Invalid Credential" };
+      const access_token = createToken({ id: user.id });
+      res.json({ access_token, username: user.firstName }); // Menambahkan username ke respons
     } catch (err) {
       next(err);
     }
@@ -73,8 +72,9 @@ class Controller {
       const user = await sequelize.transaction(async (t) => {
         const { firstName, lastName, email, password, phoneNumber, birthDay } =
           req.body;
+          console.log(req.body)
         const user = await User.create(
-          { firstName, lastName, email, password, phoneNumber, birthDay },
+          { firstName, lastName : "tes", email, password, phoneNumber:"08876734", birthDay },
           { transaction: t }
         );
 

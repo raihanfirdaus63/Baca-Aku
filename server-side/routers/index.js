@@ -4,7 +4,7 @@ const authentication = require('../middlewares/authentication');
 const router = express.Router();
 
 router.get('/', Controller.test)
-router.get('/login-user', Controller.loginUser)
+router.post('/login-user', Controller.loginUser)
 router.post('/login-admin', Controller.loginAdmin)
 router.post('/register-user', Controller.registerUser)
 
